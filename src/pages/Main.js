@@ -8,7 +8,7 @@ const sections = [
   },
   {
     title: 'Productos',
-    href:  '/#products',
+    href:  '/#/products',
     img:   '../src/assets/images/5.jpg',
     alt: 'productos',
   },
