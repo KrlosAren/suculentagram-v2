@@ -1,0 +1,32 @@
+/* main successfull  */
+
+.successfull--main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray-color);
+}
+
+.successfull--main img{
+  width: 352px;
+  height: auto;
+}
+
+.successfull--main p{
+  padding: 20px;
+  color: var(--mostaza-color);
+}
+
+.successfull--main a{
+  font-size: var(--normal-16);
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+.successfull--main a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}

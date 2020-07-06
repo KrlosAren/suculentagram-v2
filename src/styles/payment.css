@@ -1,0 +1,81 @@
+/* producto details section */
+
+
+
+.payment{
+  max-width: var(--max-1088);
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.payment__details{
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+}
+
+.payment__details--img{
+  width: 100%;
+  height: auto;
+  align-items: center;
+}
+
+.payment__details--img figure{
+  display: flex;
+  align-items: center;
+}
+
+.payment__details--img img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.payment__details--text{
+  display: inherit;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 0 0 50px;
+}
+
+.payment__details--form{
+  display: inherit;
+  flex-direction: column;
+}
+
+.payment__details--form > label{
+  font-size: var(--normal-16);
+  width: 100%;
+  margin: 5px;
+}
+
+
+.payment__details--form > input{
+  height: 40px;
+  border: none;
+  background-color: #e9dbc3;
+}
+
+input{
+  padding: 20px;
+}
+
+.payment--button{
+  width: 100%;
+}
+
+.payment--button button{
+  width: 100%;
+  height: 35px;
+  background-color: var(--mostaza-color);
+  border: none;
+  font-size: var(--normal-16);
+  color: var(--white-color);
+  border-radius: 20px;
+}
+
+.payment--button:hover button:hover{
+  cursor: pointer;
+  box-shadow: 4px 4px 12px #727272b4;
+}
