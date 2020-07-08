@@ -4,7 +4,14 @@ import getCurrentUrl from '../src/utils/getCurrentUrl.js'
 import resolveRoutes from '../src/utils/ResolvesRoutes.js'
 import solveTemplate from './utils/SolveTemplates.js'
 
-
+import './styles/main.css'
+import './styles/payment.css'
+import './styles/details.css'
+import './styles/products.css'
+import './styles/mainHome.css'
+import './styles/animations.css'
+import './styles/successfull.css'
+import './styles/mediasQueries.css'
 
 const router = async () => {
 
