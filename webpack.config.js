@@ -1,40 +1,57 @@
-const path = require("path");
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 module.exports = {
   entry: {
-    home: path.resolve(__dirname, "./src/app.js"),
+    app: path.resolve(__dirname, './src/app.js'),
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/[name].js',
+    publicPath: 'http://localhost:3500/',
+    chunkFilename: 'js/[id].[chunkhash].js'
   },
-  devServer: {
+  devServer:{
+    contentBase: path.resolve(__dirname,'dist'),
     open: true,
-    port: 4000,
+    port: 3500,
+    hot: true,
+    // host: '192.168.0.4:3500',
   },
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCSSExtractPlugin.loader
-          },
-          
-        "css-loader"
-        ],
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
       },
-    ],
+      {
+        test: /.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ]
+      },
+      {
+        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            outputPath: 'assets/',
+          }
+        }
+      },
+    ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Suculentagram',
+    new HtmlWebpackHarddiskPlugin({
+      outputPath: path.resolve(__dirname, 'dist')
     }),
-    new MiniCSSExtractPlugin({
-      filename: './src/styles/[name].css'
+    new HtmlWebpackPlugin({
+      alwaysWriteToDisk: true,
+      title: '[name].html',
+      template: path.resolve(__dirname, './index.html')
     })
   ]
-};
+}

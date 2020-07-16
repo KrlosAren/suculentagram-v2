@@ -141,7 +141,7 @@
 
 .header--background{
   margin-top: 65px;
-  background-image: url('../assets/images/fontPlants.svg');
+  background-image: url('../../assets/images/fontPlants.svg');
   object-fit: cover;
   opacity: .75;
 }

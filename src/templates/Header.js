@@ -1,4 +1,4 @@
-
+import logo from '../assets/images/Logo2.svg'
 
 
 const data = {
@@ -6,21 +6,21 @@ const data = {
   logo: [
     {
       href: '/',
-      title: '../src/assets/images/Logo2.svg',
+      title: logo,
     }
   ],
   menu: [
     {
-      href: 'Faqs.html',
-      title: 'FAQs'
+      href: '/#/comunidad',
+      title: 'Comunidad'
     },
     {
-      href: 'Blog',
+      href: '/#/Blog',
       title: 'Blog'
     },
     {
-      href: 'tips.html',
-      title: 'Tips'
+      href: '/#/products',
+      title: 'Productos'
     },
   ]
 }

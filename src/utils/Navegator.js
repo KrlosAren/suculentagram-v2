@@ -1,27 +1,34 @@
 
+const historyBack = () => {
+  history.back()
+}
+
+const historyForward = () => {
+  history.forward()
+}
+
 const filter = [
   {
-    href: window.history.back(),
+    history: history.back,
     title: 'Volver'
   },
   {
-    href: window.history,
+    history: historyForward,
     title: 'Siguiente'
   },
 ]
 
-
-const navegation = () => {
+const Navegator = () => {
   const view = `
   <div class="container--filter fadeIn">
     <div class="filter">
     ${filter.map(navegation => `
     <div class="filter--sections">
-      <a href=${navegation.href}>
+      <button onclick="${navegation.history}()">
         <h3>
           ${navegation.title}
         </h3>
-      </a>
+      </button>
     </div>
     `).join("")}
     </div>
@@ -29,3 +36,5 @@ const navegation = () => {
   `;
   return view;
 }
+
+export default Navegator;

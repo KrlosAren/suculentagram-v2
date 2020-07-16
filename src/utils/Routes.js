@@ -4,7 +4,7 @@ import Details from        '../pages/Details.js'
 import Payment from        '../pages/Payment.js'
 import Successfull from    '../templates/Successfull.js'
 
-debugger
+
 const routes = [
   {
     path: '/',

@@ -2,7 +2,7 @@ import getId from   '../utils/getId.js'
 import getData from '../utils/getData.js';
 
 const Details = async () => {
-  debugger
+  
   const id = getId();
   const photo = await getData(id);
   let description = photo.url.split('/')[4].split('-');

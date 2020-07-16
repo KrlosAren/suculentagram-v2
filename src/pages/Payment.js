@@ -28,7 +28,7 @@ const Payment = async () => {
       <input type="phone"  />
       </label>
       <span class="product--button">
-        <a href="/#successfull">
+        <a href="/#/successfull">
           <button>
           Pagar
           </button>
