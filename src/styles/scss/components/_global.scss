@@ -1,0 +1,30 @@
+/* ------------------------ COLORS ------------------------*/
+
+$color-primary: #C2923F;
+$color-secondary: #d8b475;
+$color-white: #f1eee9;
+$color-auxiliar: #3E3A3E;
+
+/* ------------------------ SPACING ------------------------*/
+
+$padding-10px: 10px;
+
+/* ------------------------ LETTERS ------------------------*/
+
+$font-12: 12px;
+$font-14: 14px;
+$fonts-16: 16px;
+$font-weight-600: 600;
+
+/* ------------------------ SHADOW ------------------------*/
+
+$box-shadow: 3px 3px 12px #a7a4a4b4;
+
+/* ------------------------ HEIGHT AND WIDTH ------------------------*/
+
+$width-1088px: 1088px;
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
