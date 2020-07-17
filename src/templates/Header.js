@@ -28,16 +28,16 @@ const data = {
 const Header = () => {
   const view = `
   <!-- menu de navegacion  -->
-    <nav class="menu fadeIn-top">
-      <div class="menu--logo">
+    <nav class="header fadeIn-top">
+      <div class="header__left">
       ${data.logo.map(logoMenu => `
           <a href=${logoMenu.href}>
           <img src=${logoMenu.title}  />
           </a>
           `).join("")}
       </div>
-      <div class="menu--links">
-        <ul class="links--list">
+      <div class="header__right">
+        <ul>
         ${data.menu.map(link => `
           <li>
             <a href=${link.href}>${link.title}</a>
