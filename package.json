@@ -6,7 +6,7 @@
   "scripts": {
     "build:local": "webpack --config ./webpack.local.config.js --mode production",
     "start": "webpack-dev-server --config ./webpack.dev.config.js",
-    "build": "webpack --config ./webpack.config.js"
+    "build:production": "webpack --config ./webpack.config.js"
   },
   "keywords": [],
   "author": "",
