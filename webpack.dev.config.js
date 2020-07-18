@@ -1,7 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssUrlRelativePlugin = require('css-url-relative-plugin')
 const webpack = require('webpack')
 
 module.exports = {
@@ -14,7 +13,6 @@ module.exports = {
   },
   mode: 'development',
   devServer: {
-    contentBase : path.resolve(__dirname, '192.168.0.4:4000'),
     port: 4000,
     hot: true,
     open:true,
