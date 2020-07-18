@@ -1,57 +1,78 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const TersetJsPlugin = require('terser-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, './src/app.js'),
+    App: path.resolve(__dirname, '.src/app.js')
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js',
-    publicPath: 'http://localhost:3500/',
+    filename: 'js/[name].[hash].js',
     chunkFilename: 'js/[id].[chunkhash].js'
   },
-  devServer:{
-    contentBase: path.resolve(__dirname,'dist'),
-    open: true,
-    port: 3500,
-    hot: true,
-    // host: '192.168.0.4:3500',
+  optimization: {
+    minizer: [
+      new TersetJsPlugin(),
+      new OptimizeCSSAssetsPlugin()
+    ]
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /.js$/,
         use: 'babel-loader',
         exclude: /node_modules/,
       },
       {
-        test: /.css$/,
+        test: /\.html$/i,
+        use: [
+          'html-loader'
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+            'css-loader',
+          ],
+        },
+      {
+        test: /\.s[ac]ss$/i,
         use: [
           'style-loader',
           'css-loader',
-        ]
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass'),
+            },
+          },
+        ],
       },
       {
-        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            outputPath: 'assets/',
-          }
-        }
+        test: /\.(png|jpe?g|gif|svg|mp4|webm)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path].[name].[hash].[ext]',
+          outputPath: './src/assets'
+        },
       },
     ]
   },
-  plugins: [
-    new HtmlWebpackHarddiskPlugin({
-      outputPath: path.resolve(__dirname, 'dist')
+  plugins:[
+    new MiniCssExtractPlugin({
+      filename: '.src/styles/[name].[hash].css',
+      chunkFilename: './src/styles/[id].[hash].css'
     }),
     new HtmlWebpackPlugin({
-      alwaysWriteToDisk: true,
-      title: '[name].html',
-      template: path.resolve(__dirname, './index.html')
+      template: path.resolve(__dirname, './html/index.html')
     })
   ]
 }

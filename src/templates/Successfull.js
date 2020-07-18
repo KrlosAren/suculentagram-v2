@@ -6,7 +6,7 @@ const Successful = () => {
   <div class="successfull">
     <img src=${successfullImg} alt="">
     <h2>
-      Su Compra ha sido Exitosa, Muchas Gracias. <a href="/">Regresar</a>
+      Su Compra ha sido Exitosa, Muchas Gracias. <a href="/index.html">Regresar</a>
     </h2>
   </div>
   `;

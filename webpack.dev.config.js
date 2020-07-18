@@ -27,16 +27,19 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
-        loaders: ['style-loader', 'css-loader', 'resolve-url-loader'],
+        test: /\.html$/i,
+        use: [
+          'html-loader'
+        ],
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ]
-      },
+        loader: [
+            'style-loader',
+            'resolve-url-loader',
+            'css-loader',
+          ],
+        },
       {
         test: /\.s[ac]ss$/i,
         use: [
@@ -45,19 +48,18 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
+              // Prefer `dart-sass`
               implementation: require('sass'),
             },
           },
         ],
       },
       {
-        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            outputPath: 'assets/',
-          }
-        }
+        test: /\.(png|jpe?g|gif|svg|mp4|webm)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
       },
     ]
   },
@@ -67,7 +69,7 @@ module.exports = {
       filename: '.src/styles/[name].css',
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './index.html')
+      template: path.resolve(__dirname, './html/index.html')
     }),
   ]
 }

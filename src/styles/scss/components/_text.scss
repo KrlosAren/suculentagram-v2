@@ -9,20 +9,10 @@
   position: relative;
   max-width: $width-1200;
 
-  img {
-    width: 100%;
-    height: 300px;
-    position: absolute;
-    // background-image: url('../../../assets/images/fontPlants.svg');
-  }
-  
   h1 {
-    font-size: 20px;
-    line-height: 40px;
     text-align: center;
-    position: absolute;
     color: $color-primary;
     @include title($font-lato);
-    @include font-size($font-16);
+    @include font-size($font-20);
   }
 }

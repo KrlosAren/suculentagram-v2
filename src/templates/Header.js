@@ -5,7 +5,7 @@ const data = {
 
   logo: [
     {
-      href: '/',
+      href: '/index.html',
       title: logo,
     }
   ],

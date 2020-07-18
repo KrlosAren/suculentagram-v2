@@ -6,7 +6,7 @@ const Failed = () => {
   <div class="failed">
   <img src=${failedImg} alt="">
   <h2>
-    No pudimos procesar su pago. Lo sentimos . <a href="/">Regresar</a>
+    No pudimos procesar su pago. Lo sentimos . <a href="/index.html">Regresar</a>
   </h2>
 </div>`;
   return view;

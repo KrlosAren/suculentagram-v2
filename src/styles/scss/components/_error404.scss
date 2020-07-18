@@ -1,0 +1,11 @@
+
+
+.error {
+  @extend .successfull;
+  
+  h1 {
+    color: $color-primary;
+    @include font-size(75px);
+    @include title($font-lato);
+  }
+}

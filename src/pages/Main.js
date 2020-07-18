@@ -34,32 +34,32 @@ const sections = [
 
 const partners = [
   {
-    href: '/',
+    href: '/index.html',
     image: partners1,
     alt: 'partner-1',
   },
   {
-    href: '/',
+    href: '/index.html',
     image: partners2,
     alt: 'partner-2',
   },
   {
-    href: '/',
+    href: '/index.html',
     image: partners3,
     alt: 'partner-3',
   },
   {
-    href: '/',
+    href: '/index.html',
     image: partners4,
     alt: 'partner-4',
   },
   {
-    href: '/',
+    href: '/index.html',
     image: partners5,
     alt: 'partner-5',
   },
   {
-    href: '/',
+    href: '/index.html',
     image: partners6,
     alt: 'partner-6',
   },
