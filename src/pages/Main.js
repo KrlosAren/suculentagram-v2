@@ -77,7 +77,7 @@ const Main = () => {
           <img src="${section.img}" alt="${section.alt}">
         </figure>
         <span class="main__overlay">
-          <p>${section.title}</p>
+          <h2>${section.title}</h2>
         </span>
       </a>
     </div>

@@ -55,8 +55,9 @@
       opacity: 1;
     }
 
-    p {
-      @include font-size($font-16);
+    h2 {
+      @include title($font-lato);
+      @include font-size($font-20);
     }
   }
 }
