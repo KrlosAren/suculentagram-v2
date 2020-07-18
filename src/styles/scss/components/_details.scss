@@ -1,0 +1,149 @@
+
+.detail {
+  width: 100%;
+  height: 400px;
+  margin: 100px auto;
+  gap: 20px;
+  justify-content: space-between;
+  max-width: $width-1200;
+  @include display-grid;
+  @include grid-template-columns(720px 400px);
+
+  &__src {
+    width: 100%;
+    height: 400px;
+
+    figure {
+      margin : 0;
+    }
+
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+
+  }
+
+  &__content {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    h2 {
+      color: $color-auxiliar;
+      @include font-size($font-18);
+      @include title($font-muli)
+    }
+
+    h3 {
+      text-align: right;
+      color: $color-auxiliar;
+      @include font-size($font-16);
+      @include title($font-lato);
+      text-transform: uppercase
+    }
+
+    button {
+      width: 100%;
+      height: 35px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      color: $color-white;
+      background-color: $color-primary;
+      @include font-size($font-16);
+      @include title($font-lato);
+
+      &:hover {
+        cursor: pointer;
+        background-color: $color-secondary;
+      }
+
+
+      &:active {
+        transform: scale(.8)
+      }
+    }
+  }
+}
+
+
+
+.product{
+  max-width: var(--max-1088);
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.product__details{
+  display: flex;
+  padding: 50px;
+}
+
+.product__details--img{
+  width: 100%;
+  height: auto;
+  align-items: center;
+}
+
+.product__details--img figure{
+  display: flex;
+  align-items: center;
+}
+
+.product__details--img img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.product__details--text{
+  display: inherit;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 0 0 50px;
+}
+
+.product__details--text  > span{
+  font-size: var(--normal-16);
+  line-height: 25px;
+}
+
+.product--description{
+  font-size: var(--normal-14);
+}
+
+.product--description ul{
+  padding: 10px 0 10px 25px;
+  list-style: square;
+}
+
+.product--description li{
+  line-height: 25px;
+}
+
+.product--button{
+  width: 100%;
+}
+
+.product--button button{
+  width: 100%;
+  height: 35px;
+  background-color: var(--mostaza-color);
+  border: none;
+  font-size: var(--normal-16);
+  color: var(--white-color);
+  border-radius: 20px;
+}
+
+.product--button:hover button:hover{
+  cursor: pointer;
+  box-shadow: 4px 4px 12px #727272b4;
+}
+

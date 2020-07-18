@@ -13,8 +13,14 @@ $padding-10px: 10px;
 
 $font-12: 12px;
 $font-14: 14px;
-$fonts-16: 16px;
+$font-16: 16px;
+$font-18: 18px;
+$font-20: 20px;
+$font-22: 22px;
 $font-weight-600: 600;
+
+$font-lato : 'Lato', sans-serif;
+$font-muli: 'Mulish', sans-serif;
 
 /* ------------------------ SHADOW ------------------------*/
 
@@ -22,9 +28,12 @@ $box-shadow: 3px 3px 12px #a7a4a4b4;
 
 /* ------------------------ HEIGHT AND WIDTH ------------------------*/
 
-$width-1088px: 1088px;
+$width-1200: 1200px;
 
-* {
-  padding: 0;
+
+
+body {
+  margin: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }

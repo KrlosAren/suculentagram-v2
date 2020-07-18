@@ -1,0 +1,14 @@
+
+.payment__content{
+  @extend .detail__content;
+
+  input {
+    margin: 10px 0;
+    padding: 20px 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $color-secondary;
+    @include font-size($font-16);
+    @include title($font-lato)
+  }
+}

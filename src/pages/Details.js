@@ -8,33 +8,35 @@ const Details = async () => {
   let description = photo.url.split('/')[4].split('-');
   description.pop()
   const view = `
-  <section class="product">
-  <div class="product__details">
-    <div class="product__details--img">
+  <section class="detail">
+    <span class="detail__src">
       <figure>
         <img src="${photo.src.original}" alt="${photo.photographer}">
       </figure>
-    </div>
-    <div class="product__details--text">
-      <span class="product--name">
-      Photographer: ${photo.photographer}
-      </span>
-      <span class="product--clasification">
-        Medidas: ${photo.height} x ${photo.width} pixels
-      </span>
-      <div class="product--description">
-        Descripcion:<br>
-        <ul>
-        ${description.join(' ')}
-        </ul>
-      </div>
-      <span class="product--button">
+    </span>
+    <span class="detail__content">
+      <h2>
+        Photographer: 
+      </h2>
+        <h3>
+          ${photo.photographer}
+        </h3>
+        <h2>
+          Medidas: 
+        </h2>
+          <h3>
+            ${photo.height} x ${photo.width} pixels
+          </h3>
+        <h2>
+          Descripcion:
+        </h2>
+        <h3>
+          ${description.join(' ')}
+        </h3>
         <a href="/#payment/${photo.id}">
           <button>La Quiero</button>
         </a>
-      </span>
-    </div>
-  </div>
+    </span>
 </section>
   `;
   return view;

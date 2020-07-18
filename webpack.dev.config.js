@@ -1,6 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssUrlRelativePlugin = require('css-url-relative-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -12,6 +14,7 @@ module.exports = {
   },
   mode: 'development',
   devServer: {
+    contentBase : path.resolve(__dirname, '192.168.0.4:4000'),
     port: 4000,
     hot: true,
     open:true,
@@ -25,10 +28,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        loaders: ['style-loader', 'css-loader', 'resolve-url-loader'],
+      },
+      {
+        test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader'
-        ],
+          'css-loader',
+        ]
       },
       {
         test: /\.s[ac]ss$/i,
@@ -55,11 +62,12 @@ module.exports = {
     ]
   },
   plugins:[
+    new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       filename: '.src/styles/[name].css',
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './index.html')
-    })
+    }),
   ]
 }

@@ -1,0 +1,12 @@
+.failed {
+  @extend .successfull;
+  background-color: $color-secondary;
+
+  h2 {
+    color: $color-auxiliar;
+
+    a {
+      color: $color-white;
+    }
+  }
+}

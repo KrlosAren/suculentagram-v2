@@ -1,10 +1,15 @@
 import getData from '../utils/getData.js'
 
+
+const randomNumber = (min, max) => {
+  return (Math.random() * (max - min) + min).toFixed(2);
+}
+
 const Products = async () => {
   const plants = await getData();
   const view = `
-  <main class="container--main">
-    <div class="container--filter fadeIn">
+  <main class="product">
+    <!-- <div class="container--filter fadeIn">
       <div class="filter">
         <div class="filter--sections">
           <a href="../index.html">
@@ -21,28 +26,25 @@ const Products = async () => {
           </a>
         </div>
       </div>
-    </div>
+    </div> -->
     
     <!-- seccion de texto -->
-    <section class="header--text fadeInLeft">
+    <!-- <section class="header--text fadeInLeft">
       <h1>
         Aprendamos un poco más de las nuestras plantas.<br>
         En cada producto encontraras una pequeña descripción de cada una.<br>
       </h1>
-    </section>
+    </section> -->
     
     <!-- card clasificacion -->
     
-    <section class="main--products">
+    <section class="product__card">
     ${plants.photos.map((plant) => `
-    <a href="/#:id/${plant.id}" class="products--cards"/>
-      <figure class="product__image">
+    <a href="/#:id/${plant.id}" >
         <img src="${plant.src.original}" alt="${plant.photographer}" />
-      </figure>
-      <span class="product__image--info__text">
-        <span class="text--name">${plant.photographer}</span>
-        <span class="text--price">$ 13.00</span>
-        <span class="text--button">
+      <span class="product__content">
+        <h3>${plant.photographer}</h3>
+        <h3>$${randomNumber(10, 35)}</h3>
           <button>Detalles</button>
         </span>
       </span>

@@ -2,40 +2,27 @@ import getId from   '../utils/getId.js'
 import getData from '../utils/getData.js';
 
 const Payment = async () => {
+  
   const id = getId();
   const photo = await getData(id);
   let description = photo.url.split('/')[4].split('-');
   description.pop()
   const view = `
-  <section class="product">
-  <div class="product__details">
-    <div class="product__details--img">
+  <section class="detail">
+    <span class="detail__src">
       <figure>
         <img src="${photo.src.original}" alt="${photo.photographer}">
       </figure>
-    </div>
-    <div class="product__details--text">
-      <label>
-      Nombre:<br>
-      <input type="text"   />
-      </label>
-      <label>
-      Correo:<br>
-      <input type="email"  />
-      </label>
-      <label>
-      Telefono:<br>
-      <input type="phone"  />
-      </label>
-      <span class="product--button">
+    </span>
+    <span class="payment__content">
+        <input type="text" name="name" id="name" placeholder="Name" >
+        <input type="text" name="lastname" id="lastname" placeholder="Lastname" >
+        <input type="email" name="email" id="email" placeholder="Email" >
+        <input type="text" name="message" id="message" placeholder="Message" >
         <a href="/#/successfull">
-          <button>
-          Pagar
-          </button>
+          <button>La Quiero</button>
         </a>
-      </span>
-    </div>
-  </div>
+    </span>
 </section>
   `;
   return view;

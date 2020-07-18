@@ -46,14 +46,6 @@ const Header = () => {
         </ul>
       </div>
     </nav>
-<!-- seccion de texto -->
-<section class="header--text header--background opacity-back">
-  <h1>
-    Crear un jardín de Suculentas requiere atención y cuidado.<br>
-    Aquí encontraras las diferentes clasificaciones de estas plantas, sus propiedades y cuidado.<br>
-    Anímate a comenzar tu jardín de Suculentas con Nosotros!<br>
-  </h1>
-</section>
   `;
   return view;
 }

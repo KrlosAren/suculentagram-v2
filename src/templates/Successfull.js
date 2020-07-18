@@ -1,13 +1,13 @@
 
-import img9 from '../assets/images/9.jpg'
+import successfullImg from '../assets/images/2.jpg'
 
 const Successful = () => {
   const view = `
-  <div class="successfull--main">
-    <img src=${img9}" alt="">
-    <p>
-      Su Compra ha sido Exitosa <a href="/">Regresar</a>
-    </p>
+  <div class="successfull">
+    <img src=${successfullImg} alt="">
+    <h2>
+      Su Compra ha sido Exitosa, Muchas Gracias. <a href="/">Regresar</a>
+    </h2>
   </div>
   `;
   return view;

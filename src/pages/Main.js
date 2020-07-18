@@ -67,16 +67,16 @@ const partners = [
 
 const Main = () => {
   const view = `
-  <section class="section">
+  <section class="home">
   <!-- products cards -->
-    <section class="page">
+    <section class="main">
     ${sections.map( section => `
-    <div class="page__card fadeIn-left">
+    <div class="main__sections fadeIn-left">
       <a href="${section.href}">
         <figure>
           <img src="${section.img}" alt="${section.alt}">
         </figure>
-        <span class="page__content">
+        <span class="main__overlay">
           <p>${section.title}</p>
         </span>
       </a>
@@ -89,9 +89,7 @@ const Main = () => {
     ${partners.map( partner => `
       <article class="partner__card">
         <a href="${partner.href}">
-          <figure>
-            <img src="${partner.image}" alt="${partner.alt}"
-          </figure>
+            <img src="${partner.image}" alt="${partner.alt}" />
         </a>
       </article>
         `).join("")}

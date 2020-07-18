@@ -3,6 +3,7 @@ import Products from       '../pages/Products.js'
 import Details from        '../pages/Details.js'
 import Payment from        '../pages/Payment.js'
 import Successfull from    '../templates/Successfull.js'
+import Failed from    '../templates/Failed.js'
 
 
 const routes = [
@@ -29,6 +30,10 @@ const routes = [
   {
     path: '/successfull',
     template: Successfull
+  },
+  {
+    path: '/failed',
+    template: Failed
   },
 ]
 

@@ -1,5 +1,6 @@
 
 
+
 .main--products{
   max-width: 1088px;
   width: 100%;
@@ -65,18 +66,5 @@
   border: none;
   box-shadow: var(--box-shadow);
   outline: none;
-}
-
-.text--button:hover button:hover{
-  cursor: pointer;
-}
-
-
-.product__image--info__text >span{
-  margin: 10px;
-}
-
-.product__image--info__text:hover{
-  opacity: 1;
 }
 
