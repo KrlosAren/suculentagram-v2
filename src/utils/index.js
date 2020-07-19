@@ -8,20 +8,31 @@ import Text from '../templates/Text.js'
 
 import '../styles/scss/main.scss'
 
+
 const router = async () => {
+
+  const templates = {
+      header: Header(),
+      text : Text(),
+      main: await render.template(),
+      footer: Footer(),
+      error404: Error404(),
+  }
+
+
   const app = document.getElementById('app')
   const hash = getCurrentUrl()
   let route = await resolveRoutes(hash)
   let render = solveTemplate(route)
   console.log(render)
-
+  
   /// resolve render elements in DOM, can better
   if (render.path === '#/successfull' || render.path === '#/failed') {
-    app.innerHTML = [await render.template()]
+    app.innerHTML = [ await render.template()]
   } else if (render.path === '#/:id' || render.path === '#/payment' || render.path === '#/details') {
-    app.innerHTML = [Header(), await render.template(), Footer()]
+    app.innerHTML = [ Header() , await render.template(),  Footer()]
   } else if (render.path === '#/' || render.path === '#/products') {
-    app.innerHTML = [Header(), Text(), await render.template(), Footer()]
+    app.innerHTML = [ Header() , Text(), await render.template(),  Footer()]
   } else {
     app.innerHTML = [Error404()]
   }

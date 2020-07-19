@@ -8,7 +8,7 @@ import Failed from    '../templates/Failed.js'
 
 const routes = [
   {
-    path: '#/',
+    path: '/',
     template: Main
   },
   {
