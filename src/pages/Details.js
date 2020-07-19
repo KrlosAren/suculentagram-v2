@@ -2,7 +2,7 @@ import getId from   '../utils/getId.js'
 import getData from '../utils/getData.js';
 
 const Details = async () => {
-  
+  debugger
   const id = getId();
   const photo = await getData(id);
   let description = photo.url.split('/')[4].split('-');
@@ -11,7 +11,7 @@ const Details = async () => {
   <section class="detail">
     <span class="detail__src">
       <figure>
-        <img src="${photo.src.original}" alt="${photo.photographer}">
+        <img src=${photo.src.original} alt="${photo.photographer}">
       </figure>
     </span>
     <span class="detail__content">
@@ -33,7 +33,7 @@ const Details = async () => {
         <h3>
           ${description.join(' ')}
         </h3>
-        <a href="/#payment/${photo.id}">
+        <a href="#/payment/${photo.id}">
           <button>La Quiero</button>
         </a>
     </span>

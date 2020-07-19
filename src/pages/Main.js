@@ -14,19 +14,19 @@ import partners6 from '../assets/images/partners-6.svg'
 const sections = [
   {
     title: 'Blog',
-    href:  '/#/blog.html',
+    href:  '#/blog.html',
     img:   img2,
     alt: 'blog',
   },
   {
     title: 'Productos',
-    href:  '/#/products',
+    href:  '#/products',
     img:   img5,
     alt: 'productos',
   },
   {
     title: 'Comunidad',
-    href:  '/#/comunidad.html',
+    href:  '#/comunidad.html',
     img:   img7,
     alt: 'comunidad',
   },
@@ -34,32 +34,32 @@ const sections = [
 
 const partners = [
   {
-    href: '/index.html',
+    href: '#/index.html',
     image: partners1,
     alt: 'partner-1',
   },
   {
-    href: '/index.html',
+    href: '#/index.html',
     image: partners2,
     alt: 'partner-2',
   },
   {
-    href: '/index.html',
+    href: '#/index.html',
     image: partners3,
     alt: 'partner-3',
   },
   {
-    href: '/index.html',
+    href: '#/index.html',
     image: partners4,
     alt: 'partner-4',
   },
   {
-    href: '/index.html',
+    href: '#/index.html',
     image: partners5,
     alt: 'partner-5',
   },
   {
-    href: '/index.html',
+    href: '#/index.html',
     image: partners6,
     alt: 'partner-6',
   },

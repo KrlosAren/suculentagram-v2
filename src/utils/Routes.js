@@ -8,31 +8,31 @@ import Failed from    '../templates/Failed.js'
 
 const routes = [
   {
-    path: '/',
+    path: '#/',
     template: Main
   },
   {
-    path: '/products',
+    path: '#/products',
     template: Products
   },
   {
-    path: '/details',
+    path: '#/details',
     template: Details
   },
   {
-    path: '/payment',
+    path: '#/payment',
     template: Payment
   },
   {
-    path: '/:id',
+    path: '#/:id',
     template: Details
   },
   {
-    path: '/successfull',
+    path: '#/successfull',
     template: Successfull
   },
   {
-    path: '/failed',
+    path: '#/failed',
     template: Failed
   },
 ]

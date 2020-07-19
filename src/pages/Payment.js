@@ -19,7 +19,7 @@ const Payment = async () => {
         <input type="text" name="lastname" id="lastname" placeholder="Lastname" >
         <input type="email" name="email" id="email" placeholder="Email" >
         <input type="text" name="message" id="message" placeholder="Message" >
-        <a href="/#/successfull">
+        <a href="#/successfull">
           <button>La Quiero</button>
         </a>
     </span>

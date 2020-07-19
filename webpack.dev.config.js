@@ -20,24 +20,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.html$/i,
-        use: [
-          'html-loader'
-        ],
+        loader: 'html-loader',
       },
       {
         test: /\.css$/,
-        loader: [
-            'style-loader',
-            'resolve-url-loader',
-            'css-loader',
-          ],
-        },
+        use : [
+          'style-loader',
+          'css-loader',
+        ]
+      },
       {
         test: /\.s[ac]ss$/i,
         use: [
@@ -46,17 +43,17 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              // Prefer `dart-sass`
               implementation: require('sass'),
             },
           },
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|svg|mp4|webm)$/i,
+        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
         loader: 'file-loader',
         options: {
-          name: '[path][name].[ext]',
+          outputPath: './src/assets/',
+          name: '[name].[ext]',
         },
       },
     ]
