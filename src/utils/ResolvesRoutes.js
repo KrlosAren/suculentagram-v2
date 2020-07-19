@@ -1,7 +1,6 @@
 import routes from "./Routes.js";
 
 const resolveRoutes = (currentUrlSegs) => {
-  debugger
   // previous check route
   const id = new RegExp(":id/[0-9]{1,}");
   const payment = new RegExp("payment/[0-9]{1,}");
