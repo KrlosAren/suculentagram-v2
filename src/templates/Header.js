@@ -5,7 +5,7 @@ const data = {
 
   logo: [
     {
-      href: '/index.html',
+      href: '/Suculentagram',
       title: logo,
     }
   ],
