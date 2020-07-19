@@ -1,6 +1,5 @@
 
 const getId = () => {
-  debugger
   const id = window.location.hash.split('/').slice(2)
   return id[0]
 }

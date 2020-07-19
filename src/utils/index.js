@@ -11,7 +11,7 @@ import '../styles/scss/main.scss'
 const router = async () => {
   const app = document.getElementById('app')
   const hash = getCurrentUrl()
-  let route = await resolveRoutes(hash)
+  let route =  resolveRoutes(hash)
   let render = solveTemplate(route)
 
   /// resolve render elements in DOM, can better

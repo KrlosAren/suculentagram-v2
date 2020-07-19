@@ -68,7 +68,6 @@ const partners = [
 const Main = () => {
   const view = `
   <section class="home">
-  <!-- products cards -->
     <section class="main">
     ${sections.map( section => `
     <div class="main__sections fadeIn-left">
@@ -83,8 +82,6 @@ const Main = () => {
     </div>
     `).join("")}
     </section>
-    <!-- final products -->
-        <!-- Inicio partners -->
     <section class="partner fadeIn-right">
     ${partners.map( partner => `
       <article class="partner__card">
@@ -95,7 +92,6 @@ const Main = () => {
         `).join("")}
     </section>
   </section>
-<!-- partners fin -->
 `;
   return view;
 }
