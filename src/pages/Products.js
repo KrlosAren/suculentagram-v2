@@ -28,6 +28,11 @@ const Products = async () => {
   return view;
 }
 
+const cacheExist = async () => {
+  const data = window.localStorage.getItem('listPlants')
+  return data
+}
+
 
 
 export default Products;
