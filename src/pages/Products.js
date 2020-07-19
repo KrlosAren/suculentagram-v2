@@ -7,6 +7,7 @@ const randomNumber = (min, max) => {
 
 const Products = async () => {
   const plants = await getData();
+  
   const view = `
   <main class="product">    
     <section class="product__card">
