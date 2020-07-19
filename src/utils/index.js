@@ -29,15 +29,6 @@ const router = async () => {
 }
 
 
-if (module.hot) {
-  module.hot.accept(function () {
-    console.log('hot reload')
-    router()
-  })
-}
-
-
-
 
 
 export default router;
