@@ -1,52 +1,57 @@
-/// resolve
-const VERSION = 'v1';
 
-self.addEventListener('install', event => {
-  event.waitUntil(precache());
-});
+const APP_PREFIX = 'Suculentagram'
+const VERSION = 'V1'              // Version of the off-line cache (change this value everytime you want to update cache)
+const CACHE_NAME = APP_PREFIX + VERSION
+const URLS = [                            // Add URL you want to cache in this list.
+  'Suculentagram/html/index.html',
+  'Suculentagram/src/assets/images/2.jpg',
+  'Suculentagram/src/assets/images/5.jpg',
+  'Suculentagram/src/assets/images/7.jpg',
+  'Suculentagram/src/assets/images/partners-1.svg',
+  'Suculentagram/src/assets/images/partners-2.svg',
+  'Suculentagram/src/assets/images/partners-3.svg',
+  'Suculentagram/src/assets/images/partners-4.svg',
+  'Suculentagram/src/assets/images/partners-5.svg',
+  'Suculentagram/src/assets/images/partners-6.svg',
+  'Suculentagram/src/assets/images/Logo2.png',
+  'Suculentagram/src/app.js',
+  'Suculentagram/src/styles/scss/main.scss',           // add path to those files here
+]
 
+
+
+// Respond with cached resources
 self.addEventListener('fetch', event => {
-  const request = event.request;
-  // get
-  if (request.method !== 'GET') {
-    return;
-  }
+  event.respondWith(
+    caches.match(event.request).then(request => {
+      if (request) {
+        return request || fetch(event.request)
+      }
+    }))
+  })
 
-  // buscar en cache
-  event.respondWith(cachedResponse(request));
+  // Cache resources
+  self.addEventListener('install', event => {
+    event.waitUntil(
+      caches.open(CACHE_NAME).then(cache => {
+        return cache.addAll(URLS)
+      })
+    )
+  })
 
-  // actualizar el cache
-  event.waitUntil(updateCache(request));
-});
+  // Delete outdated caches
+  self.addEventListener('activate', event => {
+    event.waitUntil(
+      caches.keys().then(function (keyList) {
+        var cacheWhitelist = keyList.filter(key => {
+          return key.indexOf(APP_PREFIX)
+        })
+        cacheWhitelist.push(CACHE_NAME)
 
-async function precache() {
-  const cache = await caches.open(VERSION);
-  return cache.addAll([
-    '/',
-    './html/index.html',
-    './src/assets/images/2.jpg',
-    './src/assets/images/5.jpg',
-    './src/assets/images/7.jpg',
-    './src/assets/images/partners-1.svg',
-    './src/assets/images/partners-2.svg',
-    './src/assets/images/partners-3.svg',
-    './src/assets/images/partners-4.svg',
-    './src/assets/images/partners-5.svg',
-    './src/assets/images/partners-6.svg',
-    './src/assets/images/Logo2.png',
-    './src/app.js',
-    './src/styles/scss/main.scss',
-  ]);
-}
-
-async function cachedResponse(request) {
-  const cache = await caches.open(VERSION);
-  const response = await cache.match(request);
-  return response || fetch(request);
-}
-
-async function updateCache(request) {
-  const cache = await caches.open(VERSION);
-  const response = await fetch(request);
-  return cache.put(request, response);
-}
+        return Promise.all(keyList.map( function(key, i){
+          if (cacheWhitelist.indexOf(key) === -1) {
+            return caches.delete(keyList[i])
+          }
+        }))
+      }))
+    })
