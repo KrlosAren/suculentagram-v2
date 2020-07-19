@@ -4,7 +4,6 @@ const API_KEY = '563492ad6f9170000100000153371c4354a14827a6bb089ac5454cd3';
 
 
 const fetchData = async (id) => {
-  debugger
   const URL = id ? `${API}photos/${id}` : `${API}/${URL_}`
   const response = await fetch(URL, {
     headers: {

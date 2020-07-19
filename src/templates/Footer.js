@@ -3,7 +3,7 @@
 
 const Footer = () => {
   const view = `
-    <footer class="footer fadeInDown">
+    <footer class="footer opacity-back ">
       <h4>
         Code by Carlos L. Zavarce
       </h4>

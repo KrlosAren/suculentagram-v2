@@ -9,7 +9,7 @@ const Error404 = () => {
     Error 404
   </h1>
   <h2>
-    Lo Sentimos no Encontramos lo que buscabas. <a href="/Suculentagram">Regresar</a>
+    Lo Sentimos no Encontramos lo que buscabas. <a href="#/">Regresar</a>
   </h2>
 </div>
   `;

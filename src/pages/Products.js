@@ -8,36 +8,7 @@ const randomNumber = (min, max) => {
 const Products = async () => {
   const plants = await getData();
   const view = `
-  <main class="product">
-    <!-- <div class="container--filter fadeIn">
-      <div class="filter">
-        <div class="filter--sections">
-          <a href="../index.html">
-            <h3>
-              All / Plants
-            </h3>  
-          </a>
-        </div>
-        <div class="filter--search">
-          <a href="/public/detailProduct.html">
-            <h3>
-              Filter / Search 
-            </h3>
-          </a>
-        </div>
-      </div>
-    </div> -->
-    
-    <!-- seccion de texto -->
-    <!-- <section class="header--text fadeInLeft">
-      <h1>
-        Aprendamos un poco más de las nuestras plantas.<br>
-        En cada producto encontraras una pequeña descripción de cada una.<br>
-      </h1>
-    </section> -->
-    
-    <!-- card clasificacion -->
-    
+  <main class="product">    
     <section class="product__card">
     ${plants.photos.map((plant) => `
     <a href="#/:id/${plant.id}" >
@@ -49,7 +20,6 @@ const Products = async () => {
         </span>
       </span>
     </a>
-    <!-- final cards -->
     `)
       .join("")}
     </section>
