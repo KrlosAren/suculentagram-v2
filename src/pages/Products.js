@@ -12,7 +12,7 @@ const Products = async () => {
     <section class="product__card">
     ${plants.photos.map((plant) => `
     <a href="#/:id/${plant.id}" >
-        <img src="${plant.src.original}" alt="${plant.photographer}" />
+        <img src="${plant.src.medium}" alt="${plant.photographer}" />
       <span class="product__content">
         <h3>${plant.photographer}</h3>
         <h3>$${randomNumber(10, 35)}</h3>
