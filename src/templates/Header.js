@@ -5,21 +5,21 @@ const data = {
 
   logo: [
     {
-      href: '/Suculentagram',
+      href: '#/',
       title: logo,
     }
   ],
   menu: [
     {
-      href: '/#/comunidad',
+      href: '#/comunidad',
       title: 'Comunidad'
     },
     {
-      href: '/#/Blog',
+      href: '#/Blog',
       title: 'Blog'
     },
     {
-      href: '/#/products',
+      href: '#/products',
       title: 'Productos'
     },
   ]
