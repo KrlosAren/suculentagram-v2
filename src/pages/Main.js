@@ -14,7 +14,7 @@ import partners6 from '../assets/images/partners-6.svg'
 const sections = [
   {
     title: 'Blog',
-    href:  '#/blog.html',
+    href:  '#/',
     img:   img2,
     alt: 'blog',
   },
@@ -26,7 +26,7 @@ const sections = [
   },
   {
     title: 'Comunidad',
-    href:  '#/comunidad.html',
+    href:  '#/',
     img:   img7,
     alt: 'comunidad',
   },

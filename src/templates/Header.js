@@ -15,7 +15,7 @@ const data = {
       title: 'Comunidad'
     },
     {
-      href: '#/Blog',
+      href: '#/blog',
       title: 'Blog'
     },
     {
