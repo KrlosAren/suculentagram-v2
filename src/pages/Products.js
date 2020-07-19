@@ -28,7 +28,7 @@ const Products = async () => {
   return view;
 }
 
-const cacheExist = async () => {
+const cacheExist = async (list) => {
   const data = window.localStorage.getItem('listPlants')
   return data
 }
