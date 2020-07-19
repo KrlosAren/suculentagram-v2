@@ -1,10 +1,11 @@
 import getId from   '../utils/getId.js'
-import getData from '../utils/getData.js';
+import getPhotoFromCache from   '../utils/getPhotoFromCache'
+
 
 const Details = async () => {
-  debugger
   const id = getId();
-  const photo = await getData(id);
+  // const photo = await getData(id);
+  const photo = await getPhotoFromCache(id)
   let description = photo.url.split('/')[4].split('-');
   description.pop()
   const view = `

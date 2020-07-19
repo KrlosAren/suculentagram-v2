@@ -1,13 +1,12 @@
-import getData from '../utils/getData.js'
-
+import cacheData from '../utils/cacheData'
 
 const randomNumber = (min, max) => {
   return (Math.random() * (max - min) + min).toFixed(2);
 }
 
 const Products = async () => {
-  const plants = await getData();
-  const fetchDataStorage = window.localStorage.setItem('listPlants', JSON.stringify(plants))
+  const plants = await cacheData();
+  // const plants = await getData();
   const view = `
   <main class="product">    
     <section class="product__card">
@@ -28,10 +27,6 @@ const Products = async () => {
   return view;
 }
 
-const cacheExist = async (list) => {
-  const data = window.localStorage.getItem('listPlants')
-  return data
-}
 
 
 
