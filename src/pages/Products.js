@@ -40,7 +40,7 @@ const Products = async () => {
     
     <section class="product__card">
     ${plants.photos.map((plant) => `
-    <a href="/#:id/${plant.id}" >
+    <a href="#/:id/${plant.id}" >
         <img src="${plant.src.original}" alt="${plant.photographer}" />
       <span class="product__content">
         <h3>${plant.photographer}</h3>

@@ -43,19 +43,6 @@ module.exports = {
           },
         ],
       },
-      // {
-      //   test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
-      //   use: [
-      //     {
-      //       loader: 'url-loader',
-      //       options: {
-      //         limit: 819200,
-      //         outputPath: './src/assets/',
-      //         name: '[name].[ext]',
-      //       },
-      //     },
-      //   ],
-      // },
       {
         test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
         loader: 'file-loader',

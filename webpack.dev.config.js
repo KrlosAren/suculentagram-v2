@@ -1,7 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssUrlRelativePlugin = require('css-url-relative-plugin')
 const webpack = require('webpack')
 
 module.exports = {
@@ -14,7 +13,6 @@ module.exports = {
   },
   mode: 'development',
   devServer: {
-    contentBase : path.resolve(__dirname, '192.168.0.4:4000'),
     port: 4000,
     hot: true,
     open:true,
@@ -22,24 +20,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.html$/i,
-        use: [
-          'html-loader'
-        ],
+        loader: 'html-loader',
       },
       {
         test: /\.css$/,
-        loader: [
-            'style-loader',
-            'resolve-url-loader',
-            'css-loader',
-          ],
-        },
+        use : [
+          'style-loader',
+          'css-loader',
+        ]
+      },
       {
         test: /\.s[ac]ss$/i,
         use: [
@@ -48,17 +43,17 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              // Prefer `dart-sass`
               implementation: require('sass'),
             },
           },
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|svg|mp4|webm)$/i,
+        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
         loader: 'file-loader',
         options: {
-          name: '[path][name].[ext]',
+          outputPath: './src/assets/',
+          name: '[name].[ext]',
         },
       },
     ]

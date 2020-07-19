@@ -1,15 +1,16 @@
 import routes from "./Routes.js";
 
 const resolveRoutes = (currentUrlSegs) => {
+  debugger
   // previous check route
   const id = new RegExp(":id/[0-9]{1,}");
   const payment = new RegExp("payment/[0-9]{1,}");
 
   let currentUrl = id.test(currentUrlSegs)
-    ? "/:id".split(" ")
+    ? "#/:id".split(" ")
     : payment.test(currentUrlSegs)
-    ? "/payment".split(" ")
-    : currentUrlSegs.split(" ");
+    ? "#/payment".split(" ")
+    : `#${currentUrlSegs}`.split(" ");
 
   routes.find((route) => {
     const availableRoute = route.path.split(" ");
