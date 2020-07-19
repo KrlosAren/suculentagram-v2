@@ -7,7 +7,7 @@ const randomNumber = (min, max) => {
 
 const Products = async () => {
   const plants = await getData();
-  
+  const fetchDataStorage = window.localStorage.setItem('listPlants', JSON.stringify(plants))
   const view = `
   <main class="product">    
     <section class="product__card">

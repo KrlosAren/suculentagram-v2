@@ -1,9 +1,8 @@
 
 const APP_PREFIX = 'Suculentagram'
-const VERSION = 'V1'              // Version of the off-line cache (change this value everytime you want to update cache)
+const VERSION = 'V1'
 const CACHE_NAME = APP_PREFIX + VERSION
-const URLS = [                            // Add URL you want to cache in this list.
-  'Suculentagram/html/index.html',
+const URLS = [
   'Suculentagram/src/assets/images/2.jpg',
   'Suculentagram/src/assets/images/5.jpg',
   'Suculentagram/src/assets/images/7.jpg',
@@ -15,7 +14,8 @@ const URLS = [                            // Add URL you want to cache in this l
   'Suculentagram/src/assets/images/partners-6.svg',
   'Suculentagram/src/assets/images/Logo2.png',
   'Suculentagram/src/app.js',
-  'Suculentagram/src/styles/scss/main.scss',           // add path to those files here
+  'Suculentagram/src/utils/index.js',
+  'Suculentagram/src/styles/scss/main.scss'
 ]
 
 
@@ -28,30 +28,30 @@ self.addEventListener('fetch', event => {
         return request || fetch(event.request)
       }
     }))
-  })
+})
 
-  // Cache resources
-  self.addEventListener('install', event => {
-    event.waitUntil(
-      caches.open(CACHE_NAME).then(cache => {
-        return cache.addAll(URLS)
-      })
-    )
-  })
-
-  // Delete outdated caches
-  self.addEventListener('activate', event => {
-    event.waitUntil(
-      caches.keys().then(function (keyList) {
-        var cacheWhitelist = keyList.filter(key => {
-          return key.indexOf(APP_PREFIX)
-        })
-        cacheWhitelist.push(CACHE_NAME)
-
-        return Promise.all(keyList.map( function(key, i){
-          if (cacheWhitelist.indexOf(key) === -1) {
-            return caches.delete(keyList[i])
-          }
-        }))
-      }))
+// Cache resources
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(URLS)
     })
+  )
+})
+
+// Delete outdated caches
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(function (keyList) {
+      var cacheWhitelist = keyList.filter(key => {
+        return key.indexOf(APP_PREFIX)
+      })
+      cacheWhitelist.push(CACHE_NAME)
+
+      return Promise.all(keyList.map(function (key, i) {
+        if (cacheWhitelist.indexOf(key) === -1) {
+          return caches.delete(keyList[i])
+        }
+      }))
+    }))
+})

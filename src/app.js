@@ -4,9 +4,9 @@ window.addEventListener('hashchange', router)
 window.addEventListener('load', router)
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js', 
+  navigator.serviceWorker.register('Suculentagram/sw.js', 
   {
-    scope: 'https://krlosaren.github.io/Suculentagram/'})
+    scope: '/Suculentagram/'})
     .catch( error => {
       console.error(error)
   })
