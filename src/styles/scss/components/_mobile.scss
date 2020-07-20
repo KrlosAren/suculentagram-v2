@@ -41,6 +41,10 @@
         transform: scale(0.5);
       }
     }
+
+    &:hover &__card {
+      
+    }
   }
 
   .footer {
