@@ -3,7 +3,6 @@
 @import './components/animations';
 @import './components/global.scss';
 @import './components/mixin.scss';
-@import './components/_mobile.scss';
 @import './components/header.scss';
 @import './components/text';
 @import './components/footer';
@@ -14,3 +13,4 @@
 @import './components/successfull';
 @import './components/failed';
 @import './components/error404';
+@import './components/_mobile.scss';
