@@ -1,0 +1,38 @@
+@include media(mobile-only) {
+
+  .header {
+    display: none;
+  }
+  
+  .main {
+    width: 100%;
+    margin: 50px auto;
+    justify-content: center;
+    gap: 35px;
+    @include grid-template-columns(max(300px));
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .text {
+    width: 300px;
+
+  }
+
+  .partner {
+    justify-content: center;
+    @include grid-template-columns(max(300px));
+
+    img {
+      width: 35%;
+    }
+  }
+
+  .footer {
+    width: 100%;
+    height: 40px;
+  }
+}
