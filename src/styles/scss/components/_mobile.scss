@@ -1,6 +1,7 @@
 @include media(mobile-only) {
 
   .header {
+    position: fixed;
     justify-content: center;    
   }
 
