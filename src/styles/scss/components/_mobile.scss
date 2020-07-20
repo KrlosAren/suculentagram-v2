@@ -1,9 +1,11 @@
 @include media(mobile-only) {
 
   .header {
-    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
   }
-  
+
   .main {
     width: 100%;
     margin: 50px auto;
@@ -49,8 +51,7 @@
   }
 
   .product {
-    max-width: 100%;
-
+    width: 100%;
       &__card {
         gap: 35px;
         justify-content: center;
@@ -76,7 +77,6 @@
   .detail {
     width: 100%;
     height: auto;
-    margin: 40px auto;
     justify-content: center;
     @include grid-template-columns(max(300px));
     @include grid-template-rows(grid-repeat(2, 1fr));
