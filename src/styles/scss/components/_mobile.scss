@@ -80,9 +80,16 @@
     justify-content: center;
     @include grid-template-columns(max(300px));
     @include grid-template-rows(grid-repeat(2, 1fr));
+    
+    &__src {
+      img {
+        object-fit:  contain;
+      }
+    }
 
     &__content {
       margin-top: 20px 0;
+
     }
   }
 

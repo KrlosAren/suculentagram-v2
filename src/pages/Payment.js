@@ -12,7 +12,7 @@ const Payment = async () => {
   <section class="detail">
     <span class="detail__src">
       <figure>
-        <img src="${photo.src.landscape}" alt="${photo.photographer}">
+        <img src=${photo.src.landscape} srcset=${photo.src.portrait} alt="${photo.photographer}">
       </figure>
     </span>
     <span class="payment__content">
