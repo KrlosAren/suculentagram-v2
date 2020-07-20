@@ -1,8 +1,8 @@
 @include media(mobile-only) {
-
   .header {
     position: fixed;
-    justify-content: center;    
+    z-index: 1;
+    justify-content: center;
   }
 
   .main {
@@ -29,7 +29,7 @@
   .partner {
     width: 100%;
     justify-content: center;
-    @include grid-template-columns(grid-repeat(2,100px));
+    @include grid-template-columns(grid-repeat(2, 100px));
 
     &__card {
       width: 100px;
@@ -38,10 +38,9 @@
       img {
         width: 100%;
         height: 100%;
-        transform: scale(.5)
+        transform: scale(0.5);
       }
     }
-
   }
 
   .footer {
@@ -51,11 +50,11 @@
 
   .product {
     width: 100%;
-      &__card {
-        gap: 35px;
-        justify-content: center;
-        transition: 0.2s;
-        @include grid-template-columns(max(300px));
+    &__card {
+      gap: 35px;
+      justify-content: center;
+      transition: 0.2s;
+      @include grid-template-columns(max(300px));
     }
 
     &__content {
@@ -79,20 +78,20 @@
     justify-content: center;
     @include grid-template-columns(max(300px));
     @include grid-template-rows(grid-repeat(2, 1fr));
-    
+
     &__src {
       img {
-        object-fit:  contain;
+        object-fit: contain;
       }
     }
 
     &__content {
       margin-top: 20px 0;
-
     }
   }
 
-  .successfull , .failed{
+  .successfull,
+  .failed {
     width: 100%;
     height: 100vh;
     margin: auto;
