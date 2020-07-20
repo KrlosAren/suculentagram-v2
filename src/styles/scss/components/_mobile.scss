@@ -45,6 +45,10 @@
         transition: 0.2s;
         @include grid-template-columns(max(300px));
     }
+
+    &__content {
+      opacity: 1;
+    }
   }
 
   .detail {
