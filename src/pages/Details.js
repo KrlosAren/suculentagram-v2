@@ -4,7 +4,6 @@ import getPhotoFromCache from   '../utils/getPhotoFromCache'
 
 const Details = async () => {
   const id = getId();
-  // const photo = await getData(id);
   const photo = await getPhotoFromCache(id)
   let description = photo.url.split('/')[4].split('-');
   description.pop()
@@ -43,4 +42,7 @@ const Details = async () => {
   return view;
 }
 
+
 export default Details;
+
+

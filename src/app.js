@@ -11,4 +11,3 @@ if ('serviceWorker' in navigator) {
       console.error(error)
   })
 }
-
