@@ -28,15 +28,13 @@ const data = {
 const Header = () => {
   const view = `
   <!-- menu de navegacion  -->
-    <nav class="header">
-      <div class="header__left">
+  <div class="header">
+    <nav class="header__menu">
       ${data.logo.map(logoMenu => `
           <a href=${logoMenu.href}>
           <img src=${logoMenu.title}  />
           </a>
           `).join("")}
-      </div>
-      <div class="header__right">
         <ul>
         ${data.menu.map(link => `
           <li>
@@ -44,8 +42,8 @@ const Header = () => {
           </li>
           `).join("")}
         </ul>
-      </div>
     </nav>
+  </div>
   `;
   return view;
 }

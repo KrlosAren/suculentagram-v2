@@ -1,19 +1,7 @@
 @include media(mobile-only) {
 
   .header {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    display: flex;
-    justify-content: center;
-
-    &__left {
-      width: 30px;
-    }
-
-    &__right{
-      width: 250px;
-    }
+    justify-content: center;    
   }
 
   .main {
