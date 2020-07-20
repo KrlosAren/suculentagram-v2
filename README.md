@@ -1,10 +1,6 @@
 # Suculentagram
 > This is my SPA using pure Vanilla Js.
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
-
 I build this project for practice everything, that i learn in Platzi.com
 
 I use Pexel-Api to consume resources and build this project.
@@ -69,10 +65,3 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 4. Push to the branch (`git push origin master/fooBar`)
 5. Create a new Pull Request
 
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/KrlosAren/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/KrlosAren/node-datadog-metrics
-[wiki]: https://github.com/KrlosAren/Suculentragram/wiki
