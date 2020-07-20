@@ -5,7 +5,6 @@ const solveTemplate = (route) => {
 
 
   const template = routes.find( template => template.path === route[0])
-
-  return  template || null
+  return template || 'error404'
 }
 export default solveTemplate;

@@ -4,6 +4,7 @@ import Details from        '../pages/Details.js'
 import Payment from        '../pages/Payment.js'
 import Successfull from    '../templates/Successfull.js'
 import Failed from    '../templates/Failed.js'
+import Error404 from '../templates/Error404'
 
 
 const routes = [
@@ -34,6 +35,10 @@ const routes = [
   {
     path: '#/failed',
     template: Failed
+  },
+  {
+    path: '#/error404',
+    template: Error404
   },
 ]
 

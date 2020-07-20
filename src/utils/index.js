@@ -3,14 +3,15 @@ import Footer from '../templates/Footer.js'
 import getCurrentUrl from './getCurrentUrl.js'
 import resolveRoutes from './ResolvesRoutes.js'
 import solveTemplate from './SolveTemplates.js'
-import Error404 from '../templates/Error404'
 import Text from '../templates/Text.js'
+import Error404 from '../templates/Error404'
 
 import '../styles/scss/main.scss'
 
 const router = async () => {
   const app = document.getElementById('app')
   const hash = getCurrentUrl()
+  // let route =  routes[hash] ? resolveRoutes(hash) : Error404
   let route =  resolveRoutes(hash)
   let render = solveTemplate(route)
 

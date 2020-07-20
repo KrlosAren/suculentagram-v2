@@ -18,17 +18,29 @@
   }
 
   .text {
-    width: 300px;
+    width: 100%;
 
+    h1 {
+      width: 300px;
+    }
   }
 
   .partner {
+    width: 100%;
     justify-content: center;
-    @include grid-template-columns(max(300px));
+    @include grid-template-columns(grid-repeat(2,100px));
 
-    img {
-      width: 35%;
+    &__card {
+      width: 100px;
+      height: 100px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        transform: scale(.5)
+      }
     }
+
   }
 
   .footer {
@@ -47,7 +59,17 @@
     }
 
     &__content {
+      background: rgba(0, 0, 0, 0.2);
+      justify-content: flex-end;
       opacity: 1;
+
+      h3 {
+        margin: 0;
+      }
+
+      button {
+        box-shadow: none;
+      }
     }
   }
 
@@ -64,7 +86,7 @@
     }
   }
 
-  .successfull {
+  .successfull , .failed{
     width: 100%;
     height: 100vh;
     margin: auto;

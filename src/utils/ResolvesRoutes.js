@@ -14,7 +14,7 @@ const resolveRoutes = (currentUrlSegs) => {
   routes.find((route) => {
     const availableRoute = route.path.split(" ");
     if (availableRoute.length !== currentUrl.length) {
-      return false;
+      return error404;
     }
 
     return availableRoute.every((routePath, i) => {
