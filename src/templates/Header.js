@@ -28,7 +28,7 @@ const data = {
 const Header = () => {
   const view = `
   <!-- menu de navegacion  -->
-    <nav class="header fadeIn-top">
+    <nav class="header">
       <div class="header__left">
       ${data.logo.map(logoMenu => `
           <a href=${logoMenu.href}>
