@@ -1,19 +1,21 @@
 import getId from   '../utils/getId.js'
+import getData from   '../utils/getData'
 import getPhotoFromCache from   '../utils/getPhotoFromCache'
+
 
 
 const Details = async () => {
   const id = getId();
-  const photo = await getPhotoFromCache(id)
+  let photo = await getPhotoFromCache(id)
   let description = photo.url.split('/')[4].split('-');
   description.pop()
   const view = `
   <section class="detail">
     <span class="detail__src">
       <figure>
-        <img src=${photo.src.landscape} srcset=${photo.src.portrait} alt="${photo.photographer}">
-      </figure>
-    </span>
+        <img src=${photo.src.landscape} srcset=${photo.src.landscape} alt="${photo.photographer}">
+        </figure>
+        </span>
     <span class="detail__content">
       <h2>
         Photographer: 

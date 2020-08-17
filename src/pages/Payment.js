@@ -3,7 +3,6 @@ import getPhotoFromCache from   '../utils/getPhotoFromCache'
 
 
 const Payment = async () => {
-  
   const id = getId();
   const photo = await getPhotoFromCache(id);
   let description = photo.url.split('/')[4].split('-');
@@ -12,7 +11,7 @@ const Payment = async () => {
   <section class="detail">
     <span class="detail__src">
       <figure>
-        <img src=${photo.src.landscape} srcset=${photo.src.portrait} alt="${photo.photographer}">
+        <img src=${photo.src.landscape} srcset=${photo.src.landscape} alt="${photo.photographer}">
       </figure>
     </span>
     <span class="payment__content">
