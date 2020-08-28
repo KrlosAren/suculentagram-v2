@@ -1,36 +1,34 @@
-import img2 from '../assets/images/2.jpg'
-import img7 from '../assets/images/7.jpg'
-import img5 from '../assets/images/5.jpg'
+import img2 from '../assets/images/2.jpg';
+import img7 from '../assets/images/7.jpg';
+import img5 from '../assets/images/5.jpg';
 
-import partners1 from '../assets/images/partners-1.svg'
-import partners2 from '../assets/images/partners-2.svg'
-import partners3 from '../assets/images/partners-3.svg'
-import partners4 from '../assets/images/partners-4.svg'
-import partners5 from '../assets/images/partners-5.svg'
-import partners6 from '../assets/images/partners-6.svg'
-
-
+import partners1 from '../assets/images/partners-1.svg';
+import partners2 from '../assets/images/partners-2.svg';
+import partners3 from '../assets/images/partners-3.svg';
+import partners4 from '../assets/images/partners-4.svg';
+import partners5 from '../assets/images/partners-5.svg';
+import partners6 from '../assets/images/partners-6.svg';
 
 const sections = [
   {
     title: 'Blog',
-    href:  '#/',
-    img:   img2,
+    href: '#/blog',
+    img: img2,
     alt: 'blog',
   },
   {
     title: 'Productos',
-    href:  '#/products',
-    img:   img5,
+    href: '#/products',
+    img: img5,
     alt: 'productos',
   },
   {
     title: 'Comunidad',
-    href:  '#/',
-    img:   img7,
+    href: '#/',
+    img: img7,
     alt: 'comunidad',
   },
-]
+];
 
 const partners = [
   {
@@ -63,13 +61,13 @@ const partners = [
     image: partners6,
     alt: 'partner-6',
   },
-]
+];
 
 const Main = () => {
   const view = `
   <section class="home">
     <section class="main">
-    ${sections.map( section => `
+    ${sections.map((section) => `
     <div class="main__sections fadeIn-left">
       <a href="${section.href}">
         <figure>
@@ -80,21 +78,20 @@ const Main = () => {
         </span>
       </a>
     </div>
-    `).join("")}
+    `).join('')}
     </section>
     <section class="partner fadeIn-right">
-    ${partners.map( partner => `
+    ${partners.map((partner) => `
       <article class="partner__card">
         <a href="${partner.href}">
             <img src="${partner.image}" alt="${partner.alt}" />
         </a>
       </article>
-        `).join("")}
+        `).join('')}
     </section>
   </section>
 `;
   return view;
-}
-
+};
 
 export default Main;

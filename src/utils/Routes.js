@@ -1,45 +1,49 @@
-import Main from           '../pages/Main.js'
-import Products from       '../pages/Products.js'
-import Details from        '../pages/Details.js'
-import Payment from        '../pages/Payment.js'
-import Successfull from    '../templates/Successfull.js'
-import Failed from    '../templates/Failed.js'
-import Error404 from '../templates/Error404'
-
+import Main from '../pages/Main';
+import Products from '../pages/Products';
+import Details from '../pages/Details';
+import Payment from '../pages/Payment';
+import Successfull from '../templates/Successfull';
+import Blog from '../pages/Blog';
+import Failed from '../templates/Failed';
+import Error404 from '../templates/Error404';
 
 const routes = [
   {
     path: '#/',
-    template: Main
+    template: Main,
   },
   {
     path: '#/products',
-    template: Products
+    template: Products,
   },
   {
     path: '#/details',
-    template: Details
+    template: Details,
   },
   {
     path: '#/payment',
-    template: Payment
+    template: Payment,
   },
   {
     path: '#/:id',
-    template: Details
+    template: Details,
   },
   {
     path: '#/successfull',
-    template: Successfull
+    template: Successfull,
+  },
+  {
+    path: '#/blog',
+    template: Blog,
   },
   {
     path: '#/failed',
-    template: Failed
+    template: Failed,
   },
   {
     path: '#/error404',
-    template: Error404
+    template: Error404,
   },
-]
+];
 
 export default routes;

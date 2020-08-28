@@ -11,11 +11,13 @@ module.exports = {
     filename: 'src/[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
-  mode: 'development',
   devServer: {
     port: 4000,
     hot: true,
     open:true,
+  },
+  resolve: {
+    extensions: ['.js'],
   },
   module: {
     rules: [
@@ -27,13 +29,6 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: 'html-loader',
-      },
-      {
-        test: /\.css$/,
-        use : [
-          'style-loader',
-          'css-loader',
-        ]
       },
       {
         test: /\.s[ac]ss$/i,
