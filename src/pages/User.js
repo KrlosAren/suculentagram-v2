@@ -9,7 +9,7 @@ const User = async () => {
   const view = `
   <div class='user'>
     <div class='user__avatar'>
-      <span class='user__avartar--img'>
+      <span class='user__avatar--img'>
         <img src='${user.avatar}'>
       </span>
       <span class='user__avatar--info'>

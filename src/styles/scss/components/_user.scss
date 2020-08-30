@@ -1,12 +1,14 @@
 .user {
   width: 60%;
   margin: 50px auto;
-
+  
   &__avatar {
     width: 100%;
     height: 150px;
-    display: flex;
-    justify-content: space-around;
+    align-items: center;
+    @include display-grid;
+    @include grid-template-columns(30%  1fr);
+
 
     &--img {
       padding: 0;
@@ -17,6 +19,21 @@
 
     &--info {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      h1 {
+        color: $color-secondary;
+        @include title($font-muli);
+        @include font-size($font-22);
+      }
+      
+      h3 {
+        color: $color-auxiliar;
+        @include title($font-muli);
+        @include font-size($font-14);
+      }
     }
   }
 
