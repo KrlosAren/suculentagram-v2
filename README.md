@@ -27,11 +27,11 @@ You can see the live result here → [Demo](https://krlosaren.github.io/Suculent
 
 🖥 Desktop version
 
-![](./src/assets/design/desktop_preview.png){ width=50%}
+![](./src/assets/design/desktop_preview.png | width=50%)
 
 📱 Mobile version
 
-![](./src/assets/design/mobile_preview.png){width=50%}
+![](./src/assets/design/mobile_preview.png | width=50%)
 
 ## :pill: Technologies
 1. HTML
