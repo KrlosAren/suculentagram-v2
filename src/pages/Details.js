@@ -1,14 +1,12 @@
-import getId from   '../utils/getId.js'
-import getData from   '../utils/getData'
-import getPhotoFromCache from   '../utils/getPhotoFromCache'
-
-
+import getId from '../utils/getId';
+import getData from '../utils/getData';
+import getPhotoFromCache from '../utils/getPhotoFromCache';
 
 const Details = async () => {
   const id = getId();
-  let photo = await getPhotoFromCache(id)
-  let description = photo.url.split('/')[4].split('-');
-  description.pop()
+  const photo = await getPhotoFromCache(id);
+  const description = photo.url.split('/')[4].split('-');
+  description.pop();
   const view = `
   <section class="detail">
     <span class="detail__src">
@@ -42,9 +40,7 @@ const Details = async () => {
 </section>
   `;
   return view;
-}
-
+};
 
 export default Details;
-
 

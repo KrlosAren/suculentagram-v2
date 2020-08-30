@@ -4,15 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:local": "webpack --config ./webpack.local.config.js --mode production",
-    "start": "webpack-dev-server --config ./webpack.dev.config.js --mode development --host 192.168.0.7",
+    "start":"npm-run-all -p server client",
+    "client": "webpack-dev-server --config ./webpack.dev.config.js --mode development --host 192.168.0.7",
+    "server":"json-server --port 5000 --watch  ./server/db.json --host 192.168.0.7",
     "build:production": "webpack --config ./webpack.config.js --mode production",
-    "start:server": "live-server"
+    "build:local": "webpack --config ./webpack.local.config.js --mode production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "faker": "^5.1.0",
+    "md5": "^2.3.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/plugin-proposal-class-properties": "^7.10.4",

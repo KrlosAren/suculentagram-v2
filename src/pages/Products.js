@@ -1,12 +1,12 @@
-import cacheData from '../utils/cacheData'
-import getData from '../utils/getData'
+import cacheData from '../utils/cacheData';
+import getData from '../utils/getData';
 
 const randomNumber = (min, max) => {
   return (Math.random() * (max - min) + min).toFixed(2);
-}
+};
 
 const Products = async () => {
-  let plants = await cacheData()
+  const plants = await cacheData();
   const view = `
   <main class="product">
     <section class="product__card">
@@ -21,13 +21,10 @@ const Products = async () => {
       </span>
     </a>
     `)
-      .join("")}
+    .join('')}
     </section>
     </main>`;
-    return view
-}
-
-
-
+  return view;
+};
 
 export default Products;

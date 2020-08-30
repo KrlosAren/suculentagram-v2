@@ -4,6 +4,7 @@ import Details from '../pages/Details';
 import Payment from '../pages/Payment';
 import Successfull from '../templates/Successfull';
 import Blog from '../pages/Blog';
+import User from '../pages/User';
 import Failed from '../templates/Failed';
 import Error404 from '../templates/Error404';
 
@@ -35,6 +36,10 @@ const routes = [
   {
     path: '#/blog',
     template: Blog,
+  },
+  {
+    path: '#/user',
+    template: User,
   },
   {
     path: '#/failed',
