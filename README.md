@@ -1,67 +1,42 @@
 # Suculentagram
-> This is my SPA using pure Vanilla Js.
+📝This is my SPA using pure Vanilla Js.
 
-I build this project for practice everything, that i learn in Platzi.com
+😍 I build this project for practice everything, that i learn in Platzi.com
 
-I use Pexel-Api to consume resources and build this project.
+🙏I use Pexel-Api to consume resources and build this project.
+**The purpose of this challenge is: continues with my learn about HTML , CSS and JS**
 
+## Start 🚀
 
+_Only you need to download the files and run install to setup all dependencies._
 
-![](header.png)
-
-## Installation
-
-npm install
-
-```sh
+```
 npm install
 ```
 
+Now **Deployment** try run this script to see the project on your computer.
 
-## Usage example
-
-If you have this project in your computer please fork and run.
-
-```sh
-npm start 
 ```
-
-To build 
-
-```sh
-npm run build:production
+npm start
 ```
+_Now see the project in_ **localhost:4000**
 
-## Development setup
+## Preview :art:
 
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
+You can see the live result here → [Demo](https://krlosaren.github.io/Suculentagram/)
 
-```sh
-npm install
-```
+🖥 Desktop version
 
-```sh
-npm start 
-```
+![](./src/assets/design/desktop_preview.png)
 
-## Release History
+📱 Mobile version
 
-* 0.0.1
-    * First release
+![](./src/assets/design/mobile_preview.png)
 
-## Meta
-
-Carlos Lopez Zavarce – [@Krloslz](https://twitter.com/KrlosLZ) – krlosaren@gmail.com
-
-Distributed under the MIT license. See ``LICENSE`` for more information.
-
-[https://github.com/KrlosAren/github-link](https://github.com/KrlosAren/)
-
-## Contributing
-
-1. Fork it (<https://github.com/KrlosAren/Suculentagram/fork>)
-2. Create your feature branch (`git checkout -b feature/Suculentagram`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin master/fooBar`)
-5. Create a new Pull Request
-
+## :pill: Technologies
+1. HTML
+2. CSS
+3. Sass
+4. JavaScript
+4. Webpack
+5. Travis
