@@ -4,7 +4,7 @@ const Spinner = () => {
     <div class="loader">Loading...</div>
   </div>
   `;
-  return view
-}
+  return view;
+};
 
-export default Spinner
+export default Spinner;

@@ -15,10 +15,12 @@ const router = async () => {
   const route = resolveRoutes(hash);
   const render = solveTemplate(route);
 
+  app.innerHTML = Spinner();
+
   /// resolve render elements in DOM, can better
   if (render.path === '#/successfull' || render.path === '#/failed') {
     app.innerHTML = [await render.template()].join(' ');
-  } else if (render.path === '#/:id' || render.path === '#/payment' || render.path === '#/details' || render.path === '#/blog' || render.path === '#/user') {
+  } else if (render.path === '#/:id' || render.path === '#/payment' || render.path === '#/details' || render.path === '#/blog' || render.path === '#/user' || render.path === '#/comunidad') {
     app.innerHTML = [Header(), await render.template(), Footer()].join(' ');
   } else if (render.path === '#/' || render.path === '#/products') {
     app.innerHTML = [Header(), Text(), await render.template(), Footer()].join('');

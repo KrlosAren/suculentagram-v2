@@ -1,6 +1,6 @@
 import getId from '../utils/getId';
-import getData from '../utils/getData';
 import getPhotoFromCache from '../utils/getPhotoFromCache';
+import Photo from '../templates/Photo';
 
 const Details = async () => {
   const id = getId();
@@ -10,10 +10,8 @@ const Details = async () => {
   const view = `
   <section class="detail">
     <span class="detail__src">
-      <figure>
-        <img src=${photo.src.landscape} srcset=${photo.src.landscape} alt="${photo.photographer}">
-        </figure>
-        </span>
+    ${Photo(photo)}
+    </span>
     <span class="detail__content">
       <h2>
         Photographer: 

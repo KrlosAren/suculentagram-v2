@@ -10,7 +10,7 @@
   }
   
   &__content {
-    padding: 10px 25px;
+    margin: 20px 0;
     @include font-size($font-16);
     @include title($font-lato)
   }

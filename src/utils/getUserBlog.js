@@ -1,4 +1,4 @@
-const API = 'http://192.168.0.7:5000/users';
+const API = 'https://suculentagram-backend.herokuapp.com/users';
 
 const getUserBlog = async (id) => {
   const URL_API = id ? `${API}/${id}` : API;

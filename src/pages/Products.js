@@ -1,5 +1,5 @@
 import cacheData from '../utils/cacheData';
-import getData from '../utils/getData';
+import Spinner from '../templates/Spinner';
 
 const randomNumber = (min, max) => {
   return (Math.random() * (max - min) + min).toFixed(2);
@@ -24,6 +24,9 @@ const Products = async () => {
     .join('')}
     </section>
     </main>`;
+  if (!plants) {
+    return Spinner();
+  }
   return view;
 };
 

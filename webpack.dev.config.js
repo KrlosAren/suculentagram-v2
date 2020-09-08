@@ -1,11 +1,11 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack')
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    App: './src/App.js'
+    App: './src/App.js',
   },
   output: {
     filename: 'src/[name].js',
@@ -14,7 +14,7 @@ module.exports = {
   devServer: {
     port: 4000,
     hot: true,
-    open:true,
+    open: true,
   },
   resolve: {
     extensions: ['.js'],
@@ -51,15 +51,15 @@ module.exports = {
           name: '[name].[ext]',
         },
       },
-    ]
+    ],
   },
-  plugins:[
+  plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       filename: '.src/styles/[name].css',
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './html/index.html')
+      template: path.resolve(__dirname, './html/index.html'),
     }),
-  ]
-}
+  ],
+};

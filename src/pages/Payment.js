@@ -1,18 +1,16 @@
-import getId from   '../utils/getId.js'
-import getPhotoFromCache from   '../utils/getPhotoFromCache'
-
+import getId from '../utils/getId';
+import getPhotoFromCache from '../utils/getPhotoFromCache';
+import Photo from '../templates/Photo';
 
 const Payment = async () => {
   const id = getId();
   const photo = await getPhotoFromCache(id);
-  let description = photo.url.split('/')[4].split('-');
-  description.pop()
+  const description = photo.url.split('/')[4].split('-');
+  description.pop();
   const view = `
   <section class="detail">
     <span class="detail__src">
-      <figure>
-        <img src=${photo.src.landscape} srcset=${photo.src.landscape} alt="${photo.photographer}">
-      </figure>
+    ${Photo(photo)}
     </span>
     <span class="payment__content">
         <input type="text" name="name" id="name" placeholder="Name" >
@@ -26,6 +24,6 @@ const Payment = async () => {
 </section>
   `;
   return view;
-}
+};
 
 export default Payment;

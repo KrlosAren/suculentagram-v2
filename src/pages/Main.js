@@ -24,7 +24,7 @@ const sections = [
   },
   {
     title: 'Comunidad',
-    href: '#/',
+    href: '#/comunidad',
     img: img7,
     alt: 'comunidad',
   },

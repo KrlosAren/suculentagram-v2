@@ -1,13 +1,11 @@
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const CompressionPlugin = require('compression-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    app : path.resolve(__dirname, './src/app.js'),
+    app: path.resolve(__dirname, './src/app.js'),
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -17,19 +15,12 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use:'babel-loader',
+        use: 'babel-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.html$/i,
         loader: 'html-loader',
-      },
-      {
-        test: /\.css$/,
-        use : [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-        ]
       },
       {
         test: /\.s[ac]ss$/i,
@@ -38,25 +29,9 @@ module.exports = {
           'css-loader',
           {
             loader: 'sass-loader',
-            options: {
-              implementation: require('sass'),
-            },
           },
         ],
       },
-      // {
-      //   test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
-      //   use: [
-      //     {
-      //       loader: 'url-loader',
-      //       options: {
-      //         limit: 819200,
-      //         outputPath: './src/assets/',
-      //         name: '[name].[ext]',
-      //       },
-      //     },
-      //   ],
-      // },
       {
         test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
         loader: 'file-loader',
@@ -65,7 +40,7 @@ module.exports = {
           name: '[name].[ext]',
         },
       },
-    ]
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -75,30 +50,17 @@ module.exports = {
       alwaysWriteToDisk: true,
       title: '[name].html',
       template: path.resolve(__dirname, './html/index.html'),
-      filename: 'index.html'
+      filename: 'index.html',
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['**/app.*', '**/commons.*'],
     }),
-    new WorkboxPlugin.GenerateSW({
-      exclude: [/\.(?:png|jpg|jpeg|svg)$/],
-      runtimeCaching: [{
-        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
-        handler: 'CacheFirst',
-        options: {
-          cacheName: 'v1',
-          expiration: {
-            maxEntries: 10,
-          },
-        },
-      }],
-    })
   ],
   optimization: {
     splitChunks: {
       chunks: 'all',
       minSize: 0,
       name: 'commons',
-    }
-  }
-}
+    },
+  },
+};

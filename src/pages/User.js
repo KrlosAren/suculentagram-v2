@@ -5,7 +5,6 @@ import Post from './Posts';
 const User = async () => {
   const id = getId();
   const user = await getUserBlog(id);
-  debugger;
   const view = `
   <div class='user'>
     <div class='user__avatar'>

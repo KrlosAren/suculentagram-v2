@@ -1,5 +1,4 @@
-import getCurrentUrl from '../utils/getCurrentUrl.js'
-
+import getCurrentUrl from '../utils/getCurrentUrl';
 
 // Function to return text of header, can be better.
 const textHeader = (currentUrl) => {
@@ -12,24 +11,24 @@ const textHeader = (currentUrl) => {
       ¡Comienza tu jardín de Suculentas con nosotros, y dale ese toque fantástico a tu Casa! <br>
 
       `,
-    }
-    return data
-  } else {
-    const data = {
-      title: 'home',
-      text: `
+    };
+    return data;
+  }
+  const data = {
+    title: 'home',
+    text: `
         Crear un jardín de Suculentas requiere atención y cuidado.<br>
         Aquí encontraras las diferentes clasificaciones de estas plantas, sus propiedades y cuidado.<br>
         Anímate a comenzar tu jardín de Suculentas con Nosotros!<br>
       `,
-    }
-    return data
-  }
-}
+  };
+  return data;
+
+};
 
 const Text = () => {
-  const currentUrl = getCurrentUrl()
-  const data = textHeader(currentUrl)
+  const currentUrl = getCurrentUrl();
+  const data = textHeader(currentUrl);
   const view = `
   <!-- seccion de texto -->
   <section class="text opacity-back">
@@ -38,8 +37,7 @@ const Text = () => {
     </h1>
   </section>
   `;
-  return view
-}
-
+  return view;
+};
 
 export default Text;
