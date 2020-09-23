@@ -1,6 +1,23 @@
 const Comunidad = () => {
   const view = `
-    <h1>En Construccion</h1>
+    <div class="comunidad">
+      <div class="badgde">
+        <div>
+          <h1>Suculentagram Comunidad</h1>
+        </div>
+        <div>
+          <span>
+           name lastname
+          </span>
+          <span>
+            Twitter:
+          </span>
+          <span>
+            Hobbies:
+          </span>
+        </div>
+      </div>
+    </div>
   `;
   return view;
 };

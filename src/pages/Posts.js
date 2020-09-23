@@ -1,12 +1,15 @@
-const Post = (posts) => {
-  // debugger;
+
+const Post = (posts, userId) => {
   const view = `
-  ${posts.map((content) => `
+  ${posts.map(({ title, post, id }) => `
     <div class='post'>
       <h3 class='post__title'>
-        ${content.title}
+        ${title}
       </h3>
-      <p class='post__content'>${content.post}</p>
+      <div>
+        <p class='post__content'>${post[0]}</p>
+      </div>
+        <a class='link' href=#/user/${userId}/post/${id}>...Leer Más</a>
     </div>
     `).join('')}
   `;

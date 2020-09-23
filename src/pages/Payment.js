@@ -3,8 +3,8 @@ import getPhotoFromCache from '../utils/getPhotoFromCache';
 import Photo from '../templates/Photo';
 
 const Payment = async () => {
-  const id = getId();
-  const photo = await getPhotoFromCache(id);
+  const { idUser } = getId();
+  const photo = await getPhotoFromCache(idUser);
   const description = photo.url.split('/')[4].split('-');
   description.pop();
   const view = `

@@ -16,3 +16,16 @@
     @include font-size($font-20);
   }
 }
+
+
+.link {
+  text-decoration: none;
+  color: $color-auxiliar;
+  @include font-size($font-16);
+  @include title($font-muli);
+  align-self: flex-end;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

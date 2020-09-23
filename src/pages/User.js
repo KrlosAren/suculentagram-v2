@@ -1,10 +1,10 @@
 import getId from '../utils/getId';
-import getUserBlog from '../utils/getUserBlog';
+import getBlog from '../utils/getUserBlog';
 import Post from './Posts';
 
 const User = async () => {
-  const id = getId();
-  const user = await getUserBlog(id);
+  const { idUser } = getId();
+  const user = await getBlog(idUser);
   const view = `
   <div class='user'>
     <div class='user__avatar'>
@@ -17,7 +17,7 @@ const User = async () => {
       </span>
     </div>
     <div class='user__posts'>
-      ${Post(user.posts)}
+      ${Post(user.posts, idUser)}
     </div>
   </div>
   `;

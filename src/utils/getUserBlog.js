@@ -1,7 +1,8 @@
 const API = 'https://suculentagram-backend.herokuapp.com/users';
 
-const getUserBlog = async (id) => {
-  const URL_API = id ? `${API}/${id}` : API;
+const getBlog = async (userId, postId) => {
+  const URL_API = postId ? `${API}/${userId}/post/${postId}` :
+    userId ? `${API}/${userId}` : API;
   try {
     const response = await fetch(URL_API);
     const data = await response.json();
@@ -11,4 +12,4 @@ const getUserBlog = async (id) => {
   }
 };
 
-export default getUserBlog;
+export default getBlog;
