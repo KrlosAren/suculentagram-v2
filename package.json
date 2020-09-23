@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm-run-all -p server client",
     "client": "webpack-dev-server --config ./webpack.dev.config.js --mode development",
+    "local": "webpack-dev-server --config ./webpack.dev.config.js --mode development --host 192.168.0.7 ",
     "server": "json-server --port 5000 --watch  ./server/db.json",
     "build:production": "webpack --config ./webpack.config.js --mode production",
     "build:local": "webpack --config ./webpack.local.config.js --mode production"
