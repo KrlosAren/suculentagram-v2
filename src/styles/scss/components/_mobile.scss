@@ -42,10 +42,6 @@
         transform: scale(0.5);
       }
     }
-
-    &:hover &__card {
-      
-    }
   }
 
   .footer {
@@ -80,6 +76,7 @@
   .detail {
     width: 100%;
     height: auto;
+    margin: 5em auto;
     justify-content: center;
     @include grid-template-columns(max(300px));
     @include grid-template-rows(grid-repeat(2, 1fr));
