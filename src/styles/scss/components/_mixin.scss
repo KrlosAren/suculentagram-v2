@@ -17,11 +17,20 @@
 }
 
 @mixin title($font) {
-	@if $font == $font-lato {
-		font-family: $font-lato;
-	} @else {
-		font-family: $font-muli;
-		font-weight: 700;
-	}
+  @if $font == $font-lato {
+    font-family: $font-lato;
+  } @else {
+    font-family: $font-muli;
+    font-weight: 700;
+  }
 }
 
+@mixin mixin-input {
+  margin: 10px 0;
+  padding: 20px 0;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $color-secondary;
+  @include font-size($font-16);
+  @include title($font-lato);
+}
