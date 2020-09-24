@@ -20,13 +20,20 @@ const router = async () => {
   /// resolve render elements in DOM, can better
   if (render.path === '#/successfull' || render.path === '#/failed') {
     app.innerHTML = [await render.template()].join(' ');
-  } else if (render.path === '#/:id' || render.path === '#/payment' || render.path === '#/details' || render.path === '#/blog' || render.path === '#/user' || render.path === '#/comunidad' || render.path === '#/post') {
+  } else if (render.path === '#/:id' ||
+    render.path === '#/payment' ||
+    render.path === '#/details' ||
+    render.path === '#/blog' ||
+    render.path === '#/user' ||
+    render.path === '#/comunidad' ||
+    render.path === '#/post') {
     app.innerHTML = [Header(), await render.template(), Footer()].join(' ');
   } else if (render.path === '#/' || render.path === '#/products') {
     app.innerHTML = [Header(), Text(), await render.template(), Footer()].join('');
   } else {
     app.innerHTML = [Error404()];
   }
+
 };
 
 export default router;

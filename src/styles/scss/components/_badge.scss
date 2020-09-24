@@ -1,0 +1,63 @@
+
+.form__badge {
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  border: 1px solid $color-primary;
+  width: 90%;
+  height: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between ;
+  border-radius: 1.5em;
+  
+  & > img {
+    border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  &--user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 1em 0;
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+  }
+
+  &--username {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+
+    p {
+      @include font-size($font-22);
+      @include title($font-muli);
+    }
+  }
+  
+  &--rrss {
+    margin-bottom: 2em;
+    @include font-size($font-16);
+    @include title($font-lato);
+  }
+}
+

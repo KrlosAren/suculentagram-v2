@@ -42,5 +42,9 @@
     @media only screen and (min-width: 1200px) and (max-width: 1480px) {
       @content;
     }
+  } @else {
+    @media only screen and (min-width: $breakpoint) {
+      @content;
+    }
   }
 }

@@ -117,4 +117,42 @@
       text-align: center;
     }
   }
+
+  .comunidad {
+    margin: 5em 0;
+    height: 100%;
+  }
+
+  .content__comunidad {
+    grid-template-columns: 1fr;
+  }
+
+
+  .form {
+    grid-template-columns: 1fr;
+
+    &__badge {
+      grid-row: 2/3;
+    }
+
+    &__formulario {
+      grid-row: 1/2;
+    }
+  }
+  
+  .badge {
+    height: 100%;
+    width: 90%;
+
+    &--user {
+      padding: 2em;
+      flex-direction: column;
+
+      img {
+        width:  150px;
+        height: 150px;
+      }
+    }
+  }
 }
+
