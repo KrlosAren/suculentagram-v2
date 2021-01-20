@@ -1,12 +1,12 @@
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: {
-    app : path.resolve(__dirname, './src/app.js'),
+    app: path.resolve(__dirname, './src/app.js'),
   },
   output: {
     path: path.resolve(__dirname, './public'),
@@ -16,7 +16,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use:'babel-loader',
+        use: 'babel-loader',
         exclude: /node_modules/,
       },
       {
@@ -25,10 +25,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use : [
+        use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-        ]
+        ],
       },
       {
         test: /\.s[ac]ss$/i,
@@ -53,7 +53,7 @@ module.exports = {
           name: '[name].[ext]',
         },
       },
-    ]
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -63,7 +63,7 @@ module.exports = {
       alwaysWriteToDisk: true,
       title: '[name].html',
       template: path.resolve(__dirname, './html/index.html'),
-      filename: 'index.html'
+      filename: 'index.html',
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['**/app.*', '**/commons.*'],
@@ -74,6 +74,6 @@ module.exports = {
       chunks: 'all',
       minSize: 0,
       name: 'commons',
-    }
-  }
-}
+    },
+  },
+};
